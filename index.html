@@ -11,12 +11,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- ═══ 安全加固 ═══ -->
+  <!-- 不把访客来源告诉任何外部站点 -->
+  <meta name="referrer" content="no-referrer" />
+  <!-- 内容安全策略：只允许加载本站资源；禁止外链脚本、iframe、插件 -->
+  <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline';
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' data:;
+        media-src 'self';
+        font-src 'self';
+        connect-src 'self';
+        object-src 'none';
+        base-uri 'none';
+        form-action 'none';
+        frame-src 'none';
+      " />
+
   <!-- ✏️ 1：浏览器标签上的标题 + 搜索/分享时显示的简介 -->
   <title>潘宇轩 · 摄影作品集</title>
   <meta name="description" content="潘宇轩，吉林动画学院网络与新媒体专业。喜欢在普通的地方找不普通的光，这是我的摄影作品集。" />
 
   <meta property="og:title" content="潘宇轩 · 摄影作品集" />
+  <meta property="og:description" content="风光、街头、校园、模型，还有一些会动的东西。" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://panfuture0721-sys.github.io/photo/" />
+  <meta property="og:image" content="https://panfuture0721-sys.github.io/photo/assets/photos/01.jpg" />
+  <meta property="og:image:width" content="1672" />
+  <meta property="og:image:height" content="2508" />
+  <meta name="twitter:card" content="summary_large_image" />
   <!-- <meta property="og:image" content="assets/photos/featured.jpg" /> -->
 
   <meta name="theme-color" content="#f7f5ef" />
@@ -50,6 +74,7 @@
 
       <nav class="nav__links" id="navLinks" aria-label="主导航">
         <a href="#works">作品</a>
+        <a href="#videos">视频</a>
         <a href="#zone">专区</a>
         <a href="#about">关于</a>
         <a href="#now">近况</a>
@@ -92,7 +117,7 @@
 
         <div class="hero__actions reveal">
           <a class="btn btn--solid" href="#works">看看照片 <span class="btn__arrow" aria-hidden="true">↗</span></a>
-          <a class="btn btn--ghost" href="#contact">约拍 / 聊聊</a>
+          <a class="btn btn--ghost" href="#contact">和我聊聊</a>
         </div>
       </div>
 
@@ -103,7 +128,7 @@
           </defs>
           <text>
             <textPath href="#badgePath" startOffset="0">
-              OPEN FOR SHOOTING · 2026 · PHOTOGRAPHY ·
+              OPEN FOR COLLAB · 2026 · PHOTOGRAPHY ·
             </textPath>
           </text>
         </svg>
@@ -114,20 +139,6 @@
         <p class="hero__scroll" aria-hidden="true">SCROLL <span>↓</span></p>
       </div>
     </section>
-
-    <!-- ══════════════ 大图 ══════════════ -->
-    <figure class="featured reveal">
-      <div class="ph ph--1 featured__img">
-        <!-- ✏️ 3：换成你最想放大的那张照片
-        <img src="assets/photos/featured.jpg" alt="图书馆四楼，下午四点" />
-        -->
-      </div>
-      <figcaption class="featured__cap">
-        <span class="featured__tag">FEATURED</span>
-        <span class="featured__title">图书馆四楼，下午四点</span>
-        <span class="featured__meta">2025 · 长春 · 35mm</span>
-      </figcaption>
-    </figure>
 
     <!-- ══════════════ 01 照片 ══════════════ -->
     <section class="section" id="works">
@@ -145,35 +156,47 @@
         <!-- ✏️ 4：每张照片对应一个 <figure>。
              换真图：把图片放进 assets/photos/，取消卡片里 <img> 的注释。
              顺序可以随便调，编号自己改成 01、02… 就行。 -->
+
         <div class="gallery">
           <figure class="shot reveal">
             <button class="shot__btn" type="button" data-photo
-                    data-caption="雪地里的雪初音 · 长春" aria-label="放大查看：雪地里的雪初音">
+                    data-caption="雪初音 · 2024" aria-label="放大查看：雪初音">
               <span class="ph shot__img ph--2" style="aspect-ratio: 2 / 3">
-                <img src="assets/photos/01.jpg" alt="雪地里的雪初音手办" />
+                <img src="assets/photos/01.jpg" alt="雪地里的雪初音手办" loading="lazy" decoding="async" />
                 <span class="shot__idx">01</span>
               </span>
             </button>
-            <figcaption class="shot__cap"><span>雪地里的雪初音</span><span>2026</span></figcaption>
+            <figcaption class="shot__cap"><span>雪初音</span><span>2024</span></figcaption>
           </figure>
 
           <figure class="shot reveal">
             <button class="shot__btn" type="button" data-photo
-                    data-caption="开饭 · 长春" aria-label="放大查看：开饭">
+                    data-caption="雪初音 · 2024" aria-label="放大查看：雪初音">
               <span class="ph shot__img ph--wide ph--3">
-                <img src="assets/photos/02.jpg" alt="手办和叉子上的食物" />
+                <img src="assets/photos/20.jpg" alt="雪地里夹着雪球的雪初音手办" loading="lazy" decoding="async" />
                 <span class="shot__idx">02</span>
               </span>
             </button>
-            <figcaption class="shot__cap"><span>开饭</span><span>2026</span></figcaption>
+            <figcaption class="shot__cap"><span>雪初音</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="吃饭的十香 · 2026" aria-label="放大查看：吃饭的十香">
+              <span class="ph shot__img ph--wide ph--4">
+                <img src="assets/photos/02.jpg" alt="手办和叉子上的食物" loading="lazy" decoding="async" />
+                <span class="shot__idx">03</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>吃饭的十香</span><span>2026</span></figcaption>
           </figure>
 
           <figure class="shot reveal">
             <button class="shot__btn" type="button" data-photo
                     data-caption="站台 · 2024" aria-label="放大查看：站台">
-              <span class="ph shot__img ph--wide ph--4">
-                <img src="assets/photos/03.jpg" alt="高铁站台上的工作人员" />
-                <span class="shot__idx">03</span>
+              <span class="ph shot__img ph--wide ph--5">
+                <img src="assets/photos/03.jpg" alt="高铁站台上的工作人员" loading="lazy" decoding="async" />
+                <span class="shot__idx">04</span>
               </span>
             </button>
             <figcaption class="shot__cap"><span>站台</span><span>2024</span></figcaption>
@@ -182,9 +205,9 @@
           <figure class="shot reveal">
             <button class="shot__btn" type="button" data-photo
                     data-caption="麦当劳的午睡 · 2025" aria-label="放大查看：麦当劳的午睡">
-              <span class="ph shot__img ph--wide ph--5">
-                <img src="assets/photos/04.jpg" alt="麦当劳里趴在桌上睡着的人" />
-                <span class="shot__idx">04</span>
+              <span class="ph shot__img ph--wide ph--6">
+                <img src="assets/photos/04.jpg" alt="麦当劳里趴在桌上睡着的人" loading="lazy" decoding="async" />
+                <span class="shot__idx">05</span>
               </span>
             </button>
             <figcaption class="shot__cap"><span>麦当劳的午睡</span><span>2025</span></figcaption>
@@ -193,9 +216,9 @@
           <figure class="shot reveal">
             <button class="shot__btn" type="button" data-photo
                     data-caption="等日落的人 · 2025" aria-label="放大查看：等日落的人">
-              <span class="ph shot__img ph--wide ph--6">
-                <img src="assets/photos/05.jpg" alt="湖边架着三脚架等日落的人" />
-                <span class="shot__idx">05</span>
+              <span class="ph shot__img ph--wide ph--7">
+                <img src="assets/photos/05.jpg" alt="湖边架着三脚架等日落的人" loading="lazy" decoding="async" />
+                <span class="shot__idx">06</span>
               </span>
             </button>
             <figcaption class="shot__cap"><span>等日落的人</span><span>2025</span></figcaption>
@@ -204,9 +227,9 @@
           <figure class="shot reveal">
             <button class="shot__btn" type="button" data-photo
                     data-caption="下水前 · 2025" aria-label="放大查看：下水前">
-              <span class="ph shot__img ph--wide ph--7">
-                <img src="assets/photos/06.jpg" alt="黄昏时分湖边码头和游泳的人" />
-                <span class="shot__idx">06</span>
+              <span class="ph shot__img ph--wide ph--8">
+                <img src="assets/photos/06.jpg" alt="黄昏时分湖边码头和游泳的人" loading="lazy" decoding="async" />
+                <span class="shot__idx">07</span>
               </span>
             </button>
             <figcaption class="shot__cap"><span>下水前</span><span>2025</span></figcaption>
@@ -215,21 +238,279 @@
           <figure class="shot reveal">
             <button class="shot__btn" type="button" data-photo
                     data-caption="自拍的人 · 2024" aria-label="放大查看：自拍的人">
-              <span class="ph shot__img ph--square ph--8">
-                <img src="assets/photos/07.jpg" alt="黄昏湖边举着手机自拍的情侣" />
-                <span class="shot__idx">07</span>
+              <span class="ph shot__img ph--square ph--9">
+                <img src="assets/photos/07.jpg" alt="黄昏湖边举着手机自拍的情侣" loading="lazy" decoding="async" />
+                <span class="shot__idx">08</span>
               </span>
             </button>
             <figcaption class="shot__cap"><span>自拍的人</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="售卖 · 2024" aria-label="放大查看：售卖">
+              <span class="ph shot__img ph--10" style="aspect-ratio: 2 / 3">
+                <img src="assets/photos/08.jpg" alt="桥下摆摊卖旧书的老人" loading="lazy" decoding="async" />
+                <span class="shot__idx">09</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>售卖</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="敢教日月换新天 · 2024" aria-label="放大查看：敢教日月换新天">
+              <span class="ph shot__img ph--wide ph--11">
+                <img src="assets/photos/09.jpg" alt="夕阳下的白色雕像" loading="lazy" decoding="async" />
+                <span class="shot__idx">10</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>敢教日月换新天</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="冬的云 · 2023" aria-label="放大查看：冬的云">
+              <span class="ph shot__img ph--wide ph--12">
+                <img src="assets/photos/10.jpg" alt="结冰的江面和漫天的云" loading="lazy" decoding="async" />
+                <span class="shot__idx">11</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>冬的云</span><span>2023</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="航线 · 2023" aria-label="放大查看：航线">
+              <span class="ph shot__img ph--wide ph--1">
+                <img src="assets/photos/11.jpg" alt="天上划过一条飞机尾迹" loading="lazy" decoding="async" />
+                <span class="shot__idx">12</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>航线</span><span>2023</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="沙滩的影 · 2023" aria-label="放大查看：沙滩的影">
+              <span class="ph shot__img ph--wide ph--2">
+                <img src="assets/photos/12.jpg" alt="傍晚水边散步的人群剪影" loading="lazy" decoding="async" />
+                <span class="shot__idx">13</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>沙滩的影</span><span>2023</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="地坛的春 · 2024" aria-label="放大查看：地坛的春">
+              <span class="ph shot__img ph--3" style="aspect-ratio: 2 / 3">
+                <img src="assets/photos/13.jpg" alt="树荫下长椅上坐着的人" loading="lazy" decoding="async" />
+                <span class="shot__idx">14</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>地坛的春</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="日落 · 2023" aria-label="放大查看：日落">
+              <span class="ph shot__img ph--wide ph--4">
+                <img src="assets/photos/14.jpg" alt="橙红色的日落和江面" loading="lazy" decoding="async" />
+                <span class="shot__idx">15</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>日落</span><span>2023</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="你好 · 2024" aria-label="放大查看：你好">
+              <span class="ph shot__img ph--5" style="aspect-ratio: 2 / 3">
+                <img src="assets/photos/18.jpg" alt="躲在门框后张望的两个孩子" loading="lazy" decoding="async" />
+                <span class="shot__idx">16</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>你好</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="公交车的沉思 · 2023" aria-label="放大查看：公交车的沉思">
+              <span class="ph shot__img ph--square ph--6">
+                <img src="assets/photos/19.jpg" alt="夜班公交车上望着窗外出神的人" loading="lazy" decoding="async" />
+                <span class="shot__idx">17</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>公交车的沉思</span><span>2023</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="日出明珠 · 2023" aria-label="放大查看：日出明珠">
+              <span class="ph shot__img ph--7" style="aspect-ratio: 2 / 3">
+                <img src="assets/photos/22.jpg" alt="夕阳下的东方明珠塔" loading="lazy" decoding="async" />
+                <span class="shot__idx">18</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>日出明珠</span><span>2023</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="故宫 · 2026" aria-label="放大查看：故宫">
+              <span class="ph shot__img ph--8" style="aspect-ratio: 2 / 3">
+                <img src="assets/photos/23.jpg" alt="故宫门前的铜狮" loading="lazy" decoding="async" />
+                <span class="shot__idx">19</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>故宫</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="故宫 · 2026" aria-label="放大查看：故宫">
+              <span class="ph shot__img ph--9" style="aspect-ratio: 2 / 3">
+                <img src="assets/photos/24.jpg" alt="故宫汉白玉栏杆上的螭首" loading="lazy" decoding="async" />
+                <span class="shot__idx">20</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>故宫</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="故宫 · 2026" aria-label="放大查看：故宫">
+              <span class="ph shot__img ph--10" style="aspect-ratio: 2 / 3">
+                <img src="assets/photos/25.jpg" alt="故宫红墙黄瓦的屋角" loading="lazy" decoding="async" />
+                <span class="shot__idx">21</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>故宫</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="吉动的秋 · 2026" aria-label="放大查看：吉动的秋">
+              <span class="ph shot__img ph--wide ph--11">
+                <img src="assets/photos/29.jpg" alt="秋日蓝天下的红色钢架" loading="lazy" decoding="async" />
+                <span class="shot__idx">22</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>吉动的秋</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="吉动的秋 · 2026" aria-label="放大查看：吉动的秋">
+              <span class="ph shot__img ph--wide ph--12">
+                <img src="assets/photos/30.jpg" alt="草地上一朵蒲公英" loading="lazy" decoding="async" />
+                <span class="shot__idx">23</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>吉动的秋</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="吉动的秋 · 2026" aria-label="放大查看：吉动的秋">
+              <span class="ph shot__img ph--wide ph--1">
+                <img src="assets/photos/31.jpg" alt="蒲公英花上停着的蜜蜂" loading="lazy" decoding="async" />
+                <span class="shot__idx">24</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>吉动的秋</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="吉动的秋 · 2026" aria-label="放大查看：吉动的秋">
+              <span class="ph shot__img ph--square ph--2">
+                <img src="assets/photos/32.jpg" alt="满地落叶的白桦林和一个人" loading="lazy" decoding="async" />
+                <span class="shot__idx">25</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>吉动的秋</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="新华门 · 2023" aria-label="放大查看：新华门">
+              <span class="ph shot__img ph--wide ph--3">
+                <img src="assets/photos/33.jpg" alt="新华门和门前的卫兵" loading="lazy" decoding="async" />
+                <span class="shot__idx">26</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>新华门</span><span>2023</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="云 · 2024" aria-label="放大查看：云">
+              <span class="ph shot__img ph--wide ph--4">
+                <img src="assets/photos/34.jpg" alt="蓝天白云和一座通信塔" loading="lazy" decoding="async" />
+                <span class="shot__idx">27</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>云</span><span>2024</span></figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════ 02 专区 · 手办摄影 ══════════════ -->
+    <!-- ══════════════ 02 视频 ══════════════ -->
+    <section class="section" id="videos">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="section__num">02</span>
+          <h2 class="section__title">视频</h2>
+          <span class="section__en" aria-hidden="true">Films</span>
+        </div>
+
+        <p class="section__lede reveal">
+          除了照片，也拍一些会动的东西。点播放才会开始加载，不拖慢页面。
+        </p>
+
+        <div class="videos">
+          <article class="video-card reveal">
+            <div class="video-card__frame">
+              <video controls playsinline preload="none" poster="assets/videos/cloud19-poster.jpg">
+                <source src="assets/videos/cloud19.mp4" type="video/mp4" />
+                你的浏览器不支持视频播放。
+              </video>
+            </div>
+            <div class="video-card__meta">
+              <span class="video-card__tag">延时专区</span>
+              <span>1:30</span>
+            </div>
+            <h3 class="video-card__title">云端拾玖</h3>
+            <!-- ✏️ 下面这句可以换成你自己的拍摄说明 -->
+            <p class="video-card__desc">一段关于云和光的延时。</p>
+          </article>
+
+          <article class="video-card reveal">
+            <div class="video-card__frame">
+              <video controls playsinline preload="none" poster="assets/videos/brand-new-day-poster.jpg">
+                <source src="assets/videos/brand-new-day.mp4" type="video/mp4" />
+                你的浏览器不支持视频播放。
+              </video>
+            </div>
+            <div class="video-card__meta">
+              <span class="video-card__tag">视频专区</span>
+              <span>0:48</span>
+            </div>
+            <h3 class="video-card__title">用 BRAND NEW DAY 的方式打开长春</h3>
+            <!-- ✏️ -->
+            <p class="video-card__desc">借《蜘蛛侠：崭新之日》预告片的节奏，剪了一遍长春。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 03 专区 · 手办摄影 ══════════════ -->
     <section class="section zone" id="zone">
       <div class="wrap">
-        <p class="zone__label reveal">02 · Special · 手办摄影</p>
+        <p class="zone__label reveal">03 · Special · 手办摄影</p>
 
         <!-- ✏️ 专区名字，想改就改 -->
         <h2 class="zone__title reveal">小人的日常</h2>
@@ -240,45 +521,110 @@
         </p>
 
         <div class="zone__meta reveal">
-          <span class="zone__count">2 张 · 2025—2026 · 持续更新</span>
+          <span class="zone__count">9 张 · 2023—2026 · 持续更新</span>
           <a class="zone__more" href="#" data-placeholder>看全部 <i aria-hidden="true">↗</i></a>
         </div>
+
 
         <div class="zone__strip">
           <figure class="zone__item reveal">
             <button class="shot__btn" type="button" data-photo
-                    data-caption="雪地里的雪初音 · 长春" aria-label="放大查看：雪地里的雪初音">
+                    data-caption="雪初音 · 2024" aria-label="放大查看：雪初音">
               <span class="ph ph--2">
-                <img src="assets/photos/01.jpg" alt="雪地里的雪初音手办" />
+                <img src="assets/photos/01.jpg" alt="雪地里的雪初音手办" loading="lazy" decoding="async" />
               </span>
             </button>
-            <figcaption class="zone__cap"><span>雪地里的雪初音</span><span>2026</span></figcaption>
+            <figcaption class="zone__cap"><span>雪初音</span><span>2024</span></figcaption>
           </figure>
 
           <figure class="zone__item reveal">
             <button class="shot__btn" type="button" data-photo
-                    data-caption="开饭 · 长春" aria-label="放大查看：开饭">
-              <span class="ph ph--10">
-                <img src="assets/photos/02.jpg" alt="手办和叉子上的食物" />
+                    data-caption="吃饭的十香 · 2026" aria-label="放大查看：吃饭的十香">
+              <span class="ph ph--3">
+                <img src="assets/photos/02.jpg" alt="手办和叉子上的食物" loading="lazy" decoding="async" />
               </span>
             </button>
-            <figcaption class="zone__cap"><span>开饭</span><span>2026</span></figcaption>
+            <figcaption class="zone__cap"><span>吃饭的十香</span><span>2026</span></figcaption>
           </figure>
 
           <figure class="zone__item reveal">
-            <div class="zone__tile">
-              <span>更多照片<br />陆续补上</span>
-            </div>
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="铃芽之旅 · 2024" aria-label="放大查看：铃芽之旅">
+              <span class="ph ph--4">
+                <img src="assets/photos/15.jpg" alt="坐在黄色小椅子旁的手办" loading="lazy" decoding="async" />
+              </span>
+            </button>
+            <figcaption class="zone__cap"><span>铃芽之旅</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="zone__item reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="摇曳露营 · 2024" aria-label="放大查看：摇曳露营">
+              <span class="ph ph--5">
+                <img src="assets/photos/16.jpg" alt="篝火旁的两个手办" loading="lazy" decoding="async" />
+              </span>
+            </button>
+            <figcaption class="zone__cap"><span>摇曳露营</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="zone__item reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="海边的康纳 · 2023" aria-label="放大查看：海边的康纳">
+              <span class="ph ph--6">
+                <img src="assets/photos/17.jpg" alt="水边拿着小螃蟹的手办" loading="lazy" decoding="async" />
+              </span>
+            </button>
+            <figcaption class="zone__cap"><span>海边的康纳</span><span>2023</span></figcaption>
+          </figure>
+
+          <figure class="zone__item reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="阿消 · 2024" aria-label="放大查看：阿消">
+              <span class="ph ph--7">
+                <img src="assets/photos/21.jpg" alt="戴消防头盔拿着斧头的手办" loading="lazy" decoding="async" />
+              </span>
+            </button>
+            <figcaption class="zone__cap"><span>阿消</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="zone__item reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="早跑的御坂美琴 · 2026" aria-label="放大查看：早跑的御坂美琴">
+              <span class="ph ph--8">
+                <img src="assets/photos/26.jpg" alt="跑道上奔跑的手办" loading="lazy" decoding="async" />
+              </span>
+            </button>
+            <figcaption class="zone__cap"><span>早跑的御坂美琴</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="zone__item reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="早跑的御坂美琴 · 2026" aria-label="放大查看：早跑的御坂美琴">
+              <span class="ph ph--9">
+                <img src="assets/photos/27.jpg" alt="石台上站着的手办" loading="lazy" decoding="async" />
+              </span>
+            </button>
+            <figcaption class="zone__cap"><span>早跑的御坂美琴</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="zone__item reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="早跑的御坂美琴 · 2026" aria-label="放大查看：早跑的御坂美琴">
+              <span class="ph ph--10">
+                <img src="assets/photos/28.jpg" alt="跑道上挥手的手办" loading="lazy" decoding="async" />
+              </span>
+            </button>
+            <figcaption class="zone__cap"><span>早跑的御坂美琴</span><span>2026</span></figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════ 03 关于 ══════════════ -->
+    <!-- ══════════════ 04 关于 ══════════════ -->
     <section class="section" id="about">
       <div class="wrap">
         <div class="section__head reveal">
-          <span class="section__num">03</span>
+          <span class="section__num">04</span>
           <h2 class="section__title">关于</h2>
           <span class="section__en" aria-hidden="true">About</span>
         </div>
@@ -294,10 +640,10 @@
               往往不是设备，而是你有没有在那一刻真的看进去。
             </p>
             <p>
-              现在出门基本都带着相机，一周至少拍三次。比起「好看」，
-              我更在意一张照片有没有让人停下来的理由。
+              现在出门基本都带着相机。倒不是一周拍三次，想起来才拍，
+              碰到什么算什么。比起「好看」，我更在意一张照片有没有让人停下来的理由。
             </p>
-            <p class="about__sign">—— 欢迎约拍，或者单纯来聊摄影 📷</p>
+            <p class="about__sign">—— 欢迎来聊摄影 📷</p>
           </div>
 
           <aside class="about__card reveal">
@@ -311,21 +657,20 @@
             <dl class="facts">
               <div><dt>学校</dt><dd>吉林动画学院</dd></div>
               <div><dt>专业</dt><dd>网络与新媒体</dd></div>
-              <div><dt>常拍</dt><dd>街头 · 校园 · 人像</dd></div>
-              <div><dt>设备</dt><dd>手机 + 一台旧相机</dd></div>
-              <div><dt>后期</dt><dd>Lightroom · Snapseed</dd></div>
-              <div><dt>在找</dt><dd>拍摄机会 / 约拍</dd></div>
+              <div><dt>常拍</dt><dd>风景 · 街头 · 校园 · 模型</dd></div>
+              <div><dt>设备</dt><dd>佳能 R5 Mark II + 其他好玩的机器</dd></div>
+              <div><dt>后期</dt><dd>DPP · Snapseed</dd></div>
             </dl>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════ 04 近况 ══════════════ -->
+    <!-- ══════════════ 05 近况 ══════════════ -->
     <section class="section" id="now">
       <div class="wrap">
         <div class="section__head reveal">
-          <span class="section__num">04</span>
+          <span class="section__num">05</span>
           <h2 class="section__title">最近在做什么</h2>
           <span class="section__en" aria-hidden="true">Now</span>
         </div>
@@ -334,38 +679,33 @@
         <ul class="now">
           <li class="now__row reveal">
             <span class="now__k">在拍</span>
-            <p class="now__v">校园系列《切片》，每周至少拍 50 张，最后只留 3 张。</p>
+            <p class="now__v">完成学校布置的校园拍摄作业。</p>
             <span class="now__tag">进行中</span>
           </li>
           <li class="now__row reveal">
-            <span class="now__k">在学</span>
-            <p class="now__v">手动曝光和 Lightroom 调色，想让照片有一点自己的味道。</p>
-            <span class="now__tag">进行中</span>
-          </li>
-          <li class="now__row reveal">
-            <span class="now__k">在找</span>
-            <p class="now__v">能带着相机的实习，或者校内外的拍摄机会。</p>
-            <span class="now__tag now__tag--hot">开放</span>
+            <span class="now__k">日常</span>
+            <p class="now__v">闲暇时随便拍拍照，拍到什么算什么。</p>
+            <span class="now__tag">不定期</span>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- ══════════════ 05 联系 ══════════════ -->
+    <!-- ══════════════ 06 联系 ══════════════ -->
     <section class="section section--contact" id="contact">
       <div class="wrap">
         <div class="section__head reveal">
-          <span class="section__num">05</span>
+          <span class="section__num">06</span>
           <h2 class="section__title">联系</h2>
           <span class="section__en" aria-hidden="true">Contact</span>
         </div>
 
         <h2 class="contact__title reveal">
-          想约拍、想合作，<br />或者只是想聊摄影<span class="dot">.</span>
+          有合作的想法，<br />或者只是想聊摄影<span class="dot">.</span>
         </h2>
 
         <p class="contact__lede reveal">
-          都欢迎。也可以直接把你的照片发我看看。
+          都欢迎，也可以直接把你的照片发我看看。
         </p>
 
         <!-- ✏️ 8：主联系方式。有邮箱的话，把下面换成
