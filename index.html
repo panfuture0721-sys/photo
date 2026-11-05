@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!--
+  ══════════════════════════════════════════════════════════
+   潘宇轩 · 摄影作品集
+   改文字搜 ✏️；换照片看 assets/README.md 的说明。
+   旧版个人主页备份在 index-v1.html，随时可以换回去。
+  ══════════════════════════════════════════════════════════
+-->
+<html lang="zh-CN" class="no-js" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✏️ 1：浏览器标签上的标题 + 搜索/分享时显示的简介 -->
+  <title>潘宇轩 · 摄影作品集</title>
+  <meta name="description" content="潘宇轩，吉林动画学院网络与新媒体专业。喜欢在普通的地方找不普通的光，这是我的摄影作品集。" />
+
+  <meta property="og:title" content="潘宇轩 · 摄影作品集" />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:image" content="assets/photos/featured.jpg" /> -->
+
+  <meta name="theme-color" content="#f7f5ef" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    (function () {
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.dataset.theme = saved;
+        else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.dataset.theme = 'dark';
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- ══════════════ 导航 ══════════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="logo" href="#top" aria-label="回到顶部">
+        <span class="logo__mark">潘</span>
+        <span class="logo__text">潘宇轩<span class="logo__dot">.</span></span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="主导航">
+        <a href="#works">作品</a>
+        <a href="#zone">专区</a>
+        <a href="#about">关于</a>
+        <a href="#now">近况</a>
+        <a href="#contact">联系</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换深浅色模式" title="切换深浅色">
+          <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button"
+                aria-label="打开菜单" aria-expanded="false" aria-controls="navLinks">
+          <span class="menu-btn__bars" aria-hidden="true"><i></i><i></i></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ══════════════ 首屏 ══════════════ -->
+    <section class="hero" id="top">
+      <div class="wrap">
+        <p class="hero__meta reveal">
+          <span class="pill"><i class="pill__dot"></i>大一在读</span>
+          <span>吉林动画学院 · 网络与新媒体</span>
+          <span class="sep" aria-hidden="true">/</span>
+          <span>现居 长春</span>
+        </p>
+
+        <h1 class="hero__title reveal">
+          <span class="hero__hello">你好，我是</span>
+          <span class="hero__name">潘宇轩<span class="dot">.</span></span>
+        </h1>
+
+        <!-- ✏️ 2：一句话说清你在拍什么 -->
+        <p class="hero__tag reveal">
+          用光和影写日记 —— 街头、校园、逆光，<br class="only-wide" />
+          把看见的瞬间留下来。
+        </p>
+
+        <div class="hero__actions reveal">
+          <a class="btn btn--solid" href="#works">看看照片 <span class="btn__arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost" href="#contact">约拍 / 聊聊</a>
+        </div>
+      </div>
+
+      <div class="hero__badge" aria-hidden="true">
+        <svg viewBox="0 0 120 120" class="badge__svg">
+          <defs>
+            <path id="badgePath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />
+          </defs>
+          <text>
+            <textPath href="#badgePath" startOffset="0">
+              OPEN FOR SHOOTING · 2026 · PHOTOGRAPHY ·
+            </textPath>
+          </text>
+        </svg>
+        <span class="badge__center">↗</span>
+      </div>
+
+      <div class="wrap">
+        <p class="hero__scroll" aria-hidden="true">SCROLL <span>↓</span></p>
+      </div>
+    </section>
+
+    <!-- ══════════════ 大图 ══════════════ -->
+    <figure class="featured reveal">
+      <div class="ph ph--1 featured__img">
+        <!-- ✏️ 3：换成你最想放大的那张照片
+        <img src="assets/photos/featured.jpg" alt="图书馆四楼，下午四点" />
+        -->
+      </div>
+      <figcaption class="featured__cap">
+        <span class="featured__tag">FEATURED</span>
+        <span class="featured__title">图书馆四楼，下午四点</span>
+        <span class="featured__meta">2025 · 长春 · 35mm</span>
+      </figcaption>
+    </figure>
+
+    <!-- ══════════════ 01 照片 ══════════════ -->
+    <section class="section" id="works">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="section__num">01</span>
+          <h2 class="section__title">照片</h2>
+          <span class="section__en" aria-hidden="true">Photographs</span>
+        </div>
+
+        <p class="section__lede reveal">
+          点任意一张放大看。这里只留我还愿意拿出来的那些。
+        </p>
+
+        <!-- ✏️ 4：每张照片对应一个 <figure>。
+             换真图：把图片放进 assets/photos/，取消卡片里 <img> 的注释。
+             顺序可以随便调，编号自己改成 01、02… 就行。 -->
+        <div class="gallery">
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="雪地里的雪初音 · 长春" aria-label="放大查看：雪地里的雪初音">
+              <span class="ph shot__img ph--2" style="aspect-ratio: 2 / 3">
+                <img src="assets/photos/01.jpg" alt="雪地里的雪初音手办" />
+                <span class="shot__idx">01</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>雪地里的雪初音</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="开饭 · 长春" aria-label="放大查看：开饭">
+              <span class="ph shot__img ph--wide ph--3">
+                <img src="assets/photos/02.jpg" alt="手办和叉子上的食物" />
+                <span class="shot__idx">02</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>开饭</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="站台 · 2024" aria-label="放大查看：站台">
+              <span class="ph shot__img ph--wide ph--4">
+                <img src="assets/photos/03.jpg" alt="高铁站台上的工作人员" />
+                <span class="shot__idx">03</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>站台</span><span>2024</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="麦当劳的午睡 · 2025" aria-label="放大查看：麦当劳的午睡">
+              <span class="ph shot__img ph--wide ph--5">
+                <img src="assets/photos/04.jpg" alt="麦当劳里趴在桌上睡着的人" />
+                <span class="shot__idx">04</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>麦当劳的午睡</span><span>2025</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="等日落的人 · 2025" aria-label="放大查看：等日落的人">
+              <span class="ph shot__img ph--wide ph--6">
+                <img src="assets/photos/05.jpg" alt="湖边架着三脚架等日落的人" />
+                <span class="shot__idx">05</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>等日落的人</span><span>2025</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="下水前 · 2025" aria-label="放大查看：下水前">
+              <span class="ph shot__img ph--wide ph--7">
+                <img src="assets/photos/06.jpg" alt="黄昏时分湖边码头和游泳的人" />
+                <span class="shot__idx">06</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>下水前</span><span>2025</span></figcaption>
+          </figure>
+
+          <figure class="shot reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="自拍的人 · 2024" aria-label="放大查看：自拍的人">
+              <span class="ph shot__img ph--square ph--8">
+                <img src="assets/photos/07.jpg" alt="黄昏湖边举着手机自拍的情侣" />
+                <span class="shot__idx">07</span>
+              </span>
+            </button>
+            <figcaption class="shot__cap"><span>自拍的人</span><span>2024</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 02 专区 · 手办摄影 ══════════════ -->
+    <section class="section zone" id="zone">
+      <div class="wrap">
+        <p class="zone__label reveal">02 · Special · 手办摄影</p>
+
+        <!-- ✏️ 专区名字，想改就改 -->
+        <h2 class="zone__title reveal">小人的日常</h2>
+
+        <p class="zone__intro reveal">
+          把盒子里的小人放进真实的世界 —— 雪地、餐桌、窗台。它们不讲话，
+          但摆好位置，故事就出来了。
+        </p>
+
+        <div class="zone__meta reveal">
+          <span class="zone__count">2 张 · 2025—2026 · 持续更新</span>
+          <a class="zone__more" href="#" data-placeholder>看全部 <i aria-hidden="true">↗</i></a>
+        </div>
+
+        <div class="zone__strip">
+          <figure class="zone__item reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="雪地里的雪初音 · 长春" aria-label="放大查看：雪地里的雪初音">
+              <span class="ph ph--2">
+                <img src="assets/photos/01.jpg" alt="雪地里的雪初音手办" />
+              </span>
+            </button>
+            <figcaption class="zone__cap"><span>雪地里的雪初音</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="zone__item reveal">
+            <button class="shot__btn" type="button" data-photo
+                    data-caption="开饭 · 长春" aria-label="放大查看：开饭">
+              <span class="ph ph--10">
+                <img src="assets/photos/02.jpg" alt="手办和叉子上的食物" />
+              </span>
+            </button>
+            <figcaption class="zone__cap"><span>开饭</span><span>2026</span></figcaption>
+          </figure>
+
+          <figure class="zone__item reveal">
+            <div class="zone__tile">
+              <span>更多照片<br />陆续补上</span>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 03 关于 ══════════════ -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="section__num">03</span>
+          <h2 class="section__title">关于</h2>
+          <span class="section__en" aria-hidden="true">About</span>
+        </div>
+
+        <div class="about">
+          <div class="about__text reveal">
+            <!-- ✏️ 5：换成你自己的故事，越具体越好 -->
+            <p class="lead">
+              我是潘宇轩，吉林动画学院网络与新媒体专业的大一学生。喜欢摄影，喜欢在普通的地方找不普通的光。
+            </p>
+            <p>
+              拍照是从手机开始的。拍得多了才发现，决定一张照片好不好的，
+              往往不是设备，而是你有没有在那一刻真的看进去。
+            </p>
+            <p>
+              现在出门基本都带着相机，一周至少拍三次。比起「好看」，
+              我更在意一张照片有没有让人停下来的理由。
+            </p>
+            <p class="about__sign">—— 欢迎约拍，或者单纯来聊摄影 📷</p>
+          </div>
+
+          <aside class="about__card reveal">
+            <!-- ✏️ 6：换成你的照片（放一张自拍或工作照）
+            <img class="portrait" src="assets/photos/me.jpg" alt="潘宇轩" />
+            -->
+            <div class="portrait__ph" aria-hidden="true">
+              <span>你的照片<br /><small>assets/photos/me.jpg</small></span>
+            </div>
+
+            <dl class="facts">
+              <div><dt>学校</dt><dd>吉林动画学院</dd></div>
+              <div><dt>专业</dt><dd>网络与新媒体</dd></div>
+              <div><dt>常拍</dt><dd>街头 · 校园 · 人像</dd></div>
+              <div><dt>设备</dt><dd>手机 + 一台旧相机</dd></div>
+              <div><dt>后期</dt><dd>Lightroom · Snapseed</dd></div>
+              <div><dt>在找</dt><dd>拍摄机会 / 约拍</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ 04 近况 ══════════════ -->
+    <section class="section" id="now">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="section__num">04</span>
+          <h2 class="section__title">最近在做什么</h2>
+          <span class="section__en" aria-hidden="true">Now</span>
+        </div>
+
+        <!-- ✏️ 7：有进展就回来更新 -->
+        <ul class="now">
+          <li class="now__row reveal">
+            <span class="now__k">在拍</span>
+            <p class="now__v">校园系列《切片》，每周至少拍 50 张，最后只留 3 张。</p>
+            <span class="now__tag">进行中</span>
+          </li>
+          <li class="now__row reveal">
+            <span class="now__k">在学</span>
+            <p class="now__v">手动曝光和 Lightroom 调色，想让照片有一点自己的味道。</p>
+            <span class="now__tag">进行中</span>
+          </li>
+          <li class="now__row reveal">
+            <span class="now__k">在找</span>
+            <p class="now__v">能带着相机的实习，或者校内外的拍摄机会。</p>
+            <span class="now__tag now__tag--hot">开放</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ 05 联系 ══════════════ -->
+    <section class="section section--contact" id="contact">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="section__num">05</span>
+          <h2 class="section__title">联系</h2>
+          <span class="section__en" aria-hidden="true">Contact</span>
+        </div>
+
+        <h2 class="contact__title reveal">
+          想约拍、想合作，<br />或者只是想聊摄影<span class="dot">.</span>
+        </h2>
+
+        <p class="contact__lede reveal">
+          都欢迎。也可以直接把你的照片发我看看。
+        </p>
+
+        <!-- ✏️ 8：主联系方式。有邮箱的话，把下面换成
+             <div class="contact__mail"><a class="mail" href="mailto:你的邮箱">你的邮箱</a></div> -->
+        <div class="contact__mail reveal">
+          <a class="mail" href="https://space.bilibili.com/3744999361481427"
+             target="_blank" rel="noopener">在 B站 私信我 <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <!-- ✏️ 8b：把 href 换成你的主页链接，然后把 data-placeholder 删掉 -->
+        <ul class="socials reveal">
+          <!-- 抖音没有能直接跳转的公开链接，做成「点一下复制抖音号」 -->
+          <li><a href="#" data-copy="43476297758" role="button" aria-label="复制抖音号 43476297758">抖音 <span class="socials__num">43476297758</span> <i aria-hidden="true">⧉</i></a></li>
+          <li><a href="https://weibo.com/u/7673393681" target="_blank" rel="noopener">微博 <i aria-hidden="true">↗</i></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year">2026</span> 潘宇轩 · 用手写的 HTML / CSS 记录光</p>
+      <a href="#top" class="footer__top">回到顶部 <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- ══════════════ 看大图 ══════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片大图" hidden>
+    <button class="lb__close" id="lbClose" type="button" aria-label="关闭">✕</button>
+    <button class="lb__nav lb__nav--prev" id="lbPrev" type="button" aria-label="上一张">←</button>
+    <figure class="lb__figure">
+      <img class="lb__img" id="lbImg" alt="" hidden />
+      <div class="ph lb__ph" id="lbPh" aria-hidden="true"></div>
+      <figcaption class="lb__cap" id="lbCap"></figcaption>
+      <span class="lb__count" id="lbCount"></span>
+    </figure>
+    <button class="lb__nav lb__nav--next" id="lbNext" type="button" aria-label="下一张">→</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
